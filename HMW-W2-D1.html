@@ -15,6 +15,7 @@
        
         margin: 0 auto;
         padding: 0 15px;
+        background: lightblue;
       }
     
       table, th, td {
@@ -140,16 +141,51 @@
       <footer>
         <p>Mobile Phone Shop </p>
          <p> Adress:</p>
-        <p>63533 Mainhausen</p>
-        <p>Germany</p>
+       
         
       </footer>
     <script>
-        const changeH1= function (newH1){
-         let h1= document.getElementById(h1) 
-         return newH1  
-        }
-      console.log("Anything new")
-    </script>
+       const changedFakeAdress  =function (address, country) {
+   const footer = document.querySelector('footer')
+   const add = `<p>${address}</p> 
+                    <p>${country}</p>`
+  footer.innerHTML += add
+    
+   
+   }
+  //  EX7.: Write a function to change the h1 text 
+    const changeH1 = function(text) {
+        document.getElementById("h1").innerText= text
+       }
+       //changeH1()
+
+      //  EX8.: Write a function to change the page background color
+     const changedBgColour = function (color) {
+       document.querySelector("body").style.backgroundColor = color
+     }
+     //changedBgColour('red')
+    //  EX9.: Write a function to change the footer address with a fake one
+
+    const newFooter = function (changeFooter) {
+      let footerTag= document.getElementsByTagName("footer")[0]
+    footerTag.innerHTML= changeFooter
+    }
+    // EX10.: Write a function to add a CSS class to every Amazon link
+    const addClass = function () {
+      let linkTag= document.getElementsByTagName ("a")
+      for (i=0; i<linkTag.length; i++) {
+        linkTag[i].setAttribute("class","new class")
+      }
+    }
+    // EX11: Write a function to toggle a CSS class for all the images in the table; that class should set the visibility of the image
+   const visibleImage = function () {
+     let imageTag= document.getElementsByTagName("img")
+     for (i=0; i<imageTag.length; i++) {
+     imageTag[i].toggleAttribute("hidden")
+   }
+  }
+
+
+   </script>
   </body>
 </html>
